@@ -18,14 +18,14 @@ function App() {
   const experiences = [
     {
       id: 1,
-      role: "Desainer Junior UI/UX",
+      role: "Junior UI/UX Designer",
       company: "PT Encrypt Digital Solution",
       date: "Jan 2026 - Saat ini",
       desc: "Merancang antarmuka yang intuitif dan berpusat pada pengguna (user-centered) untuk produk digital guna meningkatkan pengalaman pengguna secara keseluruhan."
     },
     {
       id: 2,
-      role: "Kru Depan (Kasir & Barista)",
+      role: "Front Crew (Kasir & Barista)",
       company: "Suweger! Indonesia",
       date: "Apr 2025 - Saat ini",
       desc: "Bertanggung jawab dalam pelayanan pelanggan, meracik minuman sebagai barista, serta menangani transaksi kasir."
