@@ -4,7 +4,6 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // --- STATE & EFFECT UNTUK DARK MODE ---
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -15,7 +14,7 @@ function App() {
     }
   }, [isDarkMode]);
 
-  // --- DATA EXPERIENCE (BAHASA INDONESIA) ---
+  // --- DATA EXPERIENCE ---
   const experiences = [
     {
       id: 1,
@@ -47,14 +46,15 @@ function App() {
     }
   ];
 
-  // --- DATA SKILLS ---
+  // --- DATA SKILLS (DIPERBARUI LEBIH LENGKAP) ---
   const techSkills = [
-    "HTML5", "CSS3", "JavaScript", "C++", "Python", 
-    "PHP", "VB.NET", "React", "Laravel", "Tailwind CSS", "MySQL"
+    "HTML/CSS", "JavaScript", "React.js", "Next.js", "Tailwind CSS", 
+    "Flutter", "Dart", "Java", "C++", "Python", "Go", "PHP", 
+    "VB.NET", "MySQL", "Data Structures"
   ];
   const designSkills = [
-    "Figma", "Canva", "Adobe Photoshop", "CorelDRAW", 
-    "UI/UX Design", "Wireframing", "Typography", "Layouting"
+    "UI/UX Design", "Figma", "Canva", "Adobe Photoshop", "CorelDRAW", 
+    "Wireframing", "Prototyping", "Typography", "Graphic Design", "Layouting"
   ];
 
   // --- DATA PORTFOLIO PROGRAMMING ---
@@ -78,14 +78,14 @@ function App() {
       title: "MoCinema",
       desc: "Sistem informasi manajemen bioskop berbasis desktop menggunakan antarmuka NetBeans.",
       tech: ["Java", "MySQL"],
-      image: "/mocinema.jpg" 
+      image: "/mocinema.png" 
     },
     {
       id: 4,
       title: "Sistem Pendaftaran",
       desc: "Aplikasi desktop multi-form dengan fungsionalitas CRUD untuk pendataan registrasi sekolah.",
       tech: ["VB.NET", "MySQL"],
-      image: "/pendaftaran.jpg" 
+      image: "/sipenmin.png" 
     },
     {
       id: 5,
@@ -96,24 +96,27 @@ function App() {
     }
   ];
 
-  // --- DATA DESAIN (KATEGORI BAHASA INDONESIA) ---
+  // --- DATA DESAIN ---
   const designProjects = [
     {
       id: 1,
       title: "Twibbon",
       category: "Twibbon & Media Sosial",
+      cover: "/twibbon.png", 
       images: ["/twibbon-1.png"], 
     },
     {
       id: 2,
       title: "Pamflet",
       category: "Pamflet & Poster",
+      cover: "/pamflet.png", 
       images: ["/pamflet-1.png", "/pamflet-2.jpg", "/pamflet-3.jpg"],
     },
     {
       id: 3,
       title: "Ucapan Hari Raya (IG Story)",
       category: "Cerita Instagram",
+      cover: "/sg.png", 
       images: [
         "/sg-1.jpg", "/sg-2.jpg", "/sg-3.jpg", "/sg-4.jpg",
         "/sg-5.jpg", "/sg-6.jpg", "/sg-7.jpg", "/sg-8.jpg", "/sg-9.jpg"
@@ -123,12 +126,14 @@ function App() {
       id: 4,
       title: "Eksplorasi Tipografi",
       category: "Tipografi",
+      cover: "/typography.png", 
       images: ["/typo-1.png", "/typo-2.png", "/typo-3.png"],
     },
     {
       id: 5,
       title: "Desain UI/UX",
       category: "Desain Antarmuka",
+      cover: "/uiux.png", 
       images: [
         "/figma-1.png", "/figma-2.png", "/figma-3.png", 
         "/figma-4.png", "/figma-5.jpeg"
@@ -138,7 +143,36 @@ function App() {
       id: 6,
       title: "Desain Lainnya",
       category: "Lain-lain",
+      cover: "/dll.png", 
       images: ["/dll-1.jpg", "/dll-2.png", "/dll-3.png"],
+    }
+  ];
+
+  // --- DATA SERTIFIKAT ---
+  const certificates = [
+    {
+      id: 1,
+      title: "Pencatatan Ciptaan (HKI) - Nesa Sport",
+      issuer: "Direktorat Jenderal Kekayaan Intelektual",
+      category: "Kekayaan Intelektual",
+      icon: "🏆",
+      date: "Nov 2025"
+    },
+    {
+      id: 2,
+      title: "Publikasi Jurnal Ilmiah SIPENMIN",
+      issuer: "Jurnal Teknologi Pendidikan dan Pembelajaran (JTPP)",
+      category: "Publikasi Ilmiah",
+      icon: "📝",
+      date: "Des 2025"
+    },
+    {
+      id: 3,
+      title: "Kerja Praktik UI/UX Designer",
+      issuer: "PT Encrypt Digital Solution",
+      category: "Pengalaman Profesional",
+      icon: "💼",
+      date: "Feb 2026"
     }
   ];
 
@@ -194,13 +228,14 @@ function App() {
         <nav className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-500">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">
-              Nara<span className="text-blue-600 dark:text-blue-400">.</span>
+              Fina<span className="text-blue-600 dark:text-blue-400">.</span>
             </h1>
             <div className="hidden md:flex gap-8 font-semibold text-slate-600 dark:text-slate-300 text-sm tracking-wide">
               <a href="#profil" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Profil</a>
               <a href="#pengalaman" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pengalaman</a>
               <a href="#keahlian" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Keahlian</a>
               <a href="#portofolio" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Portofolio</a>
+              <a href="#sertifikat" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Penghargaan</a>
             </div>
             
             <div className="flex items-center gap-4">
@@ -213,7 +248,7 @@ function App() {
               </button>
               
               <a href="#kontak" className="hidden sm:inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors">
-                Mari Diskusi
+                Kontak
               </a>
             </div>
           </div>
@@ -232,8 +267,19 @@ function App() {
               </span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl font-medium">
-              Desainer Junior UI/UX & Penggiat Teknologi. Memadukan estetika desain visual dengan logika pemrograman untuk menciptakan produk digital yang fungsional.
+              UI/UX Designer & Penggiat Teknologi. Memadukan estetika desain visual dengan logika pemrograman untuk menciptakan produk digital yang fungsional.
             </p>
+            
+            <div className="flex flex-wrap gap-4 pt-4">
+              <a href="https://www.linkedin.com/in/safinatul-latifah-180415265" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#0A66C2] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#004182] transition-colors shadow-md">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/Safinatullatifah" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors shadow-md">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
           </div>
           
           <div className="lg:col-span-5 relative order-1 lg:order-2 flex justify-center lg:justify-end">
@@ -243,7 +289,7 @@ function App() {
               
               <div className="absolute -bottom-6 -left-8 md:-left-12 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 z-20 animate-float-delay transition-colors duration-500">
                 <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Peran Saat Ini</p>
-                <p className="font-bold text-sm md:text-base text-slate-900 dark:text-white">Desainer UI/UX</p>
+                <p className="font-bold text-sm md:text-base text-slate-900 dark:text-white">UI/UX Designer</p>
                 <p className="text-blue-600 dark:text-blue-400 font-semibold text-xs mt-0.5">PT Encrypt Digital Solution</p>
               </div>
             </div>
@@ -255,7 +301,7 @@ function App() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">Pengalaman</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-lg">Jejak perjalanan profesional dan organisasiku sejauh ini.</p>
+              <p className="text-slate-600 dark:text-slate-400 text-lg">Jejak perjalanan profesional dan organisasi.</p>
             </div>
             
             <div className="pl-4 border-l-2 border-slate-200 dark:border-slate-700 space-y-10">
@@ -346,6 +392,7 @@ function App() {
               </div>
             </div>
 
+            {/* GALERI DESAIN */}
             <div>
               <div className="flex items-center gap-4 mb-10">
                 <h3 className="text-3xl font-extrabold text-slate-900 dark:text-white">Galeri Desain</h3>
@@ -360,7 +407,7 @@ function App() {
                   >
                     <div className="w-full h-56 bg-slate-200 dark:bg-slate-700 overflow-hidden relative">
                       <img 
-                        src={item.images[0]} 
+                        src={item.cover} 
                         alt={item.title} 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -383,19 +430,84 @@ function App() {
           </div>
         </section>
 
-        {/* 6. FOOTER */}
-        <footer id="kontak" className="bg-slate-950 dark:bg-black py-16 text-center transition-colors duration-500">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2 className="text-3xl font-extrabold text-white mb-6">Tertarik berkolaborasi?</h2>
-            <a href="mailto:emailmu@unesa.ac.id" className="inline-block bg-white dark:bg-blue-600 text-slate-900 dark:text-white px-8 py-4 rounded-full font-bold hover:bg-blue-50 dark:hover:bg-blue-500 mt-4 transition-colors">
-              Hubungi Saya
-            </a>
+        {/* 6. BAGIAN PENGHARGAAN */}
+        <section id="sertifikat" className="bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-200 dark:border-slate-800 transition-colors duration-500">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">Penghargaan & Sertifikasi</h3>
+              <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Pencapaian dan dedikasi terbaik selama menempuh pendidikan.</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certificates.map((cert) => (
+                <div key={cert.id} className="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                  <div className="text-4xl bg-blue-50 dark:bg-slate-700/50 p-3 rounded-xl">
+                    {cert.icon}
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 tracking-wider uppercase">{cert.category}</span>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white mt-1 mb-1 leading-snug">{cert.title}</h4>
+                    <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-2">{cert.issuer}</p>
+                    <span className="inline-block bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] px-2 py-1 rounded font-bold uppercase tracking-wide">
+                      {cert.date}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 7. FOOTER (DIROMBAK TOTAL MENJADI LEBIH PROFESIONAL) */}
+        <footer id="kontak" className="bg-slate-900 dark:bg-black py-20 border-t border-slate-800 transition-colors duration-500 text-slate-300">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              
+              {/* Sisi Kiri: Teks & Tombol */}
+              <div className="text-left">
+                <h2 className="text-4xl font-extrabold text-white mb-4">Mari Berkolaborasi!</h2>
+                <p className="text-slate-400 mb-8 max-w-md leading-relaxed text-lg">
+                  Punya ide proyek, tawaran pekerjaan, atau sekadar ingin berdiskusi soal UI/UX dan pemrograman? Jangan ragu untuk menyapa.
+                </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <a 
+                    href="mailto:finalatifah4@gmail.com" 
+                    className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 w-full sm:w-auto"
+                  >
+                    Kirim Pesan via Email
+                  </a>
+                  {/* Teks Email langsung agar mudah di-copy pengunjung */}
+                  <span className="text-sm font-medium bg-slate-800/80 border border-slate-700 px-5 py-3.5 rounded-full select-all w-full sm:w-auto text-center">
+                    finalatifah4@gmail.com
+                  </span>
+                </div>
+              </div>
+
+              {/* Sisi Kanan: Sosial Media & Links */}
+              <div className="md:text-right border-t md:border-t-0 md:border-l border-slate-800 pt-8 md:pt-0 md:pl-12 flex flex-col md:items-end justify-center">
+                <h3 className="text-xl font-bold text-white mb-6">Temukan Aku di:</h3>
+                <div className="flex gap-4 mb-10 justify-start md:justify-end">
+                  <a href="https://www.linkedin.com/in/safinatul-latifah-180415265" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors shadow-lg hover:-translate-y-1">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                  <a href="https://github.com/Safinatullatifah" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full bg-slate-800 hover:bg-slate-600 flex items-center justify-center transition-colors shadow-lg hover:-translate-y-1">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="border-t border-slate-800 mt-16 pt-8 text-center sm:flex sm:justify-between sm:text-left text-slate-500 text-sm font-medium">
+              <p>© 2026 Safinatul Latifah. Seluruh Hak Cipta Dilindungi.</p>
+              
+            </div>
           </div>
         </footer>
 
       </div>
 
-      {/* 7. POP-UP MODAL */}
+      {/* 8. POP-UP MODAL */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center animate-in fade-in duration-300">
           <div className="absolute top-0 w-full p-6 flex justify-between items-center z-50">
