@@ -285,7 +285,7 @@ function App() {
           <div className="lg:col-span-5 relative order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 mt-10 lg:mt-0 animate-float">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-teal-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <img src="/profilku.png" alt="Foto Fina" className="relative w-full h-full object-cover rounded-full border-8 border-white dark:border-slate-800 shadow-2xl z-10 bg-slate-200 dark:bg-slate-700 transition-colors duration-500"/>
+              <img src="/profilku.jpeg" alt="Foto Fina" className="relative w-full h-full object-cover rounded-full border-8 border-white dark:border-slate-800 shadow-2xl z-10 bg-slate-200 dark:bg-slate-700 transition-colors duration-500"/>
               
               <div className="absolute -bottom-6 -left-8 md:-left-12 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 z-20 animate-float-delay transition-colors duration-500">
                 <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Peran Saat Ini</p>
